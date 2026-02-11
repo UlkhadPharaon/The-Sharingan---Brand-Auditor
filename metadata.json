@@ -1,0 +1,5 @@
+{
+  "name": "The Sharingan - Brand Auditor",
+  "description": "An elite AI brand auditor that uses the Gemini API and Google Search to analyze companies and detect visual weaknesses for high-ticket marketing strategies.",
+  "requestFramePermissions": []
+}

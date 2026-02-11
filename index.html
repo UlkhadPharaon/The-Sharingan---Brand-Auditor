@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE SHARINGAN | Brand Auditor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              luxury: {
+                gold: '#D4AF37',       // Metallic Gold
+                'gold-hover': '#B5952F',
+                'gold-dim': '#3A300E', // Dark Gold for borders/bg
+                'gold-glow': '#F9E79F', // Bright highlights
+                black: '#020202',      // Deepest Black
+                card: '#080808',       // Slightly lighter black for cards
+                text: '#FFFFFF',
+                muted: '#888888'
+              }
+            },
+            animation: {
+              'spin-slow': 'spin 8s linear infinite',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            backgroundImage: {
+              'gold-gradient': 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap');
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #020202;
+        color: #FFFFFF;
+      }
+      
+      .font-display {
+        font-family: 'Cinzel', serif; /* More luxurious serif font for headers */
+      }
+      
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020202; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333; 
+        border-radius: 0px;
+        border: 1px solid #111;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #D4AF37; 
+      }
+      
+      .text-gold-gradient {
+        background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Styles d'impression pour PDF Premium */
+      @media print {
+        body {
+          background-color: #FFFFFF !important;
+          color: #000000 !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .print-only {
+          display: block !important;
+        }
+        .prose {
+          color: #000 !important;
+        }
+        .prose strong {
+          color: #000 !important;
+        }
+        .prose h2, .prose h3 {
+          color: #000 !important;
+          border-color: #000 !important;
+        }
+        .bg-luxury-card, .bg-[#050505] {
+          background-color: #fff !important;
+          border: 1px solid #000 !important;
+          box-shadow: none !important;
+          color: #000 !important;
+        }
+        a {
+            text-decoration: none !important;
+            color: #000 !important;
+        }
+      }
+
+      /* Animation de Flux de Pensée (Vague Premium) */
+      .reveal-container {
+        /* Soft gradient mask for the wave effect */
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) var(--reveal-pos), rgba(0,0,0,0) calc(var(--reveal-pos) + 25%));
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) var(--reveal-pos), rgba(0,0,0,0) calc(var(--reveal-pos) + 25%));
+        will-change: mask-image;
+      }
+      
+      /* Optional: Add a subtle texture overlay that moves */
+      .scan-texture {
+        background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.05) 50%, transparent);
+        background-size: 100% 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100px;
+        top: var(--reveal-pos);
+        transform: translateY(-50%);
+        pointer-events: none;
+        z-index: 20;
+      }
+      
+      @property --reveal-pos {
+        syntax: '<percentage>';
+        inherits: false;
+        initial-value: 0%;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
